@@ -1,5 +1,13 @@
 #!/usr/bin/env php
 <?php
-
+require_once(__DIR__ . '../../vendor/autoload.php');
+use function  Brain\Games\Cli\greet;
 print_r("php bin/brain-games.php\n
 Welcome to the Brain Games!");
+
+
+
+greet();
+
+
+
