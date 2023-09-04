@@ -1,10 +1,3 @@
-/*
-*Brain Games CLI
-*
-*This script is a simple interactive command line interface (CLI) 
-*that greets the user and asks for their name.
-*It the displays a greeting with the user's name.
-*/
 <?php
 namespace Brain\Games\Cli;
 require_once __DIR__ . '../../vendor/autoload.php';
