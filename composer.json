@@ -6,7 +6,9 @@
             "Hexlet\\Code\\": "src/"
         },
 	"files": [
-	   "src/Cli.php"
+	   "src/Cli.php",
+	   "src/Games/brain-calc.php",
+	   "src/Engine.php"
 	]
     },
     "authors": [

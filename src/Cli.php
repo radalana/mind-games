@@ -9,8 +9,9 @@
  * @author   Sveta <radalana415@gmail.com>
  * @link     https://github.com/radalana/php-project-45.git
  */
+
 namespace Brain\Games\Cli;
-require_once __DIR__ . '../../vendor/autoload.php';
+require_once(__DIR__ . '../../vendor/autoload.php');
 
 
 
