@@ -6,7 +6,8 @@
 	    "src/Cli.php"
 	],
         "psr-4": {
-            "Hexlet\\Code\\": "src/"
+            "Hexlet\\Code\\": "src/",
+	    "Brain\\Games\\": "src/"
         }
     },
     "authors": [
