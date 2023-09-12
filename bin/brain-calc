@@ -2,11 +2,23 @@
 
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+// Путь который будет использован при глобальной установке пакета
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+// Путь для локальной работы с проектом
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadPath2)) {
+    require_once $autoloadPath2;
+} else {
+    require_once $autoloadPath1;
+}
 
 use function cli\line;
 use function cli\prompt;
 
+use function Brain\Games\Engine\greet;
+
+/*
 function isEven($number) : string
 {
     if ($number % 2 === 0){
@@ -15,12 +27,10 @@ function isEven($number) : string
 
     return 'no'; 
 }
+*/
 
 
-line('Welcome to the Brain Game!');
-$name = prompt('May I have your name?');
-line("Hello, %s!", $name);
-line('Answer "yes" if the number is even, otherwise answer "no".');
+$name = greet();
 
 $numberOfRounds = 3;
 $currentRound = 0;
