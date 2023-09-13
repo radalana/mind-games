@@ -13,22 +13,11 @@ if (file_exists($autoloadPath2)) {
     require_once $autoloadPath1;
 }
 
+/*
 use function cli\line;
 use function cli\prompt;
 
 use function Brain\Games\Engine\greet;
-
-/*
-function isEven($number) : string
-{
-    if ($number % 2 === 0){
-        return 'yes';
-    }
-
-    return 'no'; 
-}
-*/
-
 
 $name = greet();
 
@@ -39,6 +28,8 @@ $currentRound = 0;
 * создать функцию которая генерирует выражение a + b
 
 */
+
+/*
 function calculateExpression($firstNumber, $secondNumber, $operation)
 {
     switch($operation) {
@@ -81,3 +72,13 @@ for ($currentRound; $currentRound < $numberOfRounds; $currentRound++)
 if ($currentRound === $numberOfRounds){
     line('Congratulations, %s!', $name);
 }
+*/
+
+
+use function Brain\Games\Calc\calculateExpression;
+use function Brain\Games\Calc\generateMathExpression;
+
+use function Brain\Games\Engine\launch;
+
+
+launch('What is the result of the expression?', 'generateMathExpression', 'calculateExpression');
