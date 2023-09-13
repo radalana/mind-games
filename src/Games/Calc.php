@@ -3,67 +3,65 @@
 namespace Brain\Games\Calc;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-#use function Brain\Games\Engine\greet;
-use function Brain\Games\Engine\launch;
+use function Brain\Games\Engine\greet;
+use function cli\line;
+use function cli\prompt;
 
-#$name = greet(); #удалить позже за ненадобность так как все уже есть в функции launch
-
-#здесь нужно использовать launch из Brain\Games\Engine.php
-# и создать нужны параметры для launch($gameRules, $qusetion, $correctAnswer)
-
-$gameRule = 'What is the result of the expression?';
-
-#$question лучше риализовать через функцию которая генерирует строку математиечского выражения, так как при каждом вызове буде создана новая строка
-
-if (!function_exists('generateMathExpression')){
-    function generateMathExpression() : string
+function calculateExpression($firstNumber, $secondNumber, $operation)
 {
-    $firstNumber = rand(0, 100);
-    $secondNumber = rand(0, 100);
+    switch($operation) {
+        case '+':
+            return $firstNumber + $secondNumber;
+        case '-':
+            return $firstNumber - $secondNumber;
+        case '*':
+            return $firstNumber * $secondNumber;
+        default:
+            return null;
+    }
+}
+
+
+
+function playCalculation(){
+    $name = greet();
+    print_r('What is the result of the expression?');
+
+    $numberOfRounds = 3;
+    $currentRound = 0;
 
     $operations = ['+', '-', '*'];
-
-    $expression = "{$firstNumber} {$operations[rand(0,2)]} {$secondNumber}";
-
-    return $expression;
-}
-
-}else{
-    print_r('пиздец');
-}
-
-
-if (!function_exists('calculateExpression')){
-    function calculateExpression($expression) : ?int
+    for($currentRound; $currentRound < $numberOfRounds; $currentRound++)
     {
-        #1. разбить строку на слова
-        $words = explode(" ", $expression);
-    
-        $firstNumber = (int) $words[0];
-        $secondNumber = (int) $words[2];
-    
-        $operation = $words[1];
-    
-    
-        switch($operation)
-        {
-            case '+':
-                return $firstNumber + $secondNumber;
-            case '-':
-                return $firstNumber - $secondNumber;
-            case '*':
-                return $firstNumber * $secondNumber;
-            default:
-                return null;        
-        }
 
+        $firstNumber  = rand(0, 100);
+        $secondNumber = rand(0, 100);
+        $operation = $operations[rand(0, 2)];
+        line ('Question: %d %s %d', $firstNumber, $operation, $secondNumber);
 
+        $userAnswer = prompt('Your answer');
+        $correctAnswer = calculateExpression($firstNumber, $secondNumber, $operation);
 
+    if ($userAnswer != $correctAnswer)
+    {
+        line("'%d' is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
+        line("Let's try again, %s!", $name);
+        break;
+    }
 
+    line('Correct!');
+    }
+
+    if ($currentRound === $numberOfRounds){
+        line('Congratulations, %s!', $name);
+    }
+    
 }
 
 
-}
+
+
+
 
 
 
