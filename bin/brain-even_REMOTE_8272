@@ -1,4 +1,5 @@
 #!/usr/bin/env php
+
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -44,4 +45,6 @@ for ($currentRound; $currentRound < $numberOfRounds; $currentRound++)
 if ($currentRound === $numberOfRounds){
     line('Congratulations, %s!', $name);
 }
+
+
 

@@ -1,0 +1,84 @@
+#!/usr/bin/env php
+
+<?php
+
+// Путь который будет использован при глобальной установке пакета
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+// Путь для локальной работы с проектом
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadPath2)) {
+    require_once $autoloadPath2;
+} else {
+    require_once $autoloadPath1;
+}
+
+/*
+use function cli\line;
+use function cli\prompt;
+
+use function Brain\Games\Engine\greet;
+
+$name = greet();
+
+$numberOfRounds = 3;
+$currentRound = 0;
+
+/*
+* создать функцию которая генерирует выражение a + b
+
+*/
+
+/*
+function calculateExpression($firstNumber, $secondNumber, $operation)
+{
+    switch($operation) {
+        case '+':
+            return $firstNumber + $secondNumber;
+        case '-':
+            return $firstNumber - $secondNumber;
+        case '*':
+            return $firstNumber * $secondNumber;
+        default:
+            return null;
+    }
+}
+
+
+$operations = ['+', '-', '*'];
+
+for ($currentRound; $currentRound < $numberOfRounds; $currentRound++)
+{
+    #$randomNumber = rand();
+    #line('Question: %d', $randomNumber);
+    $firstNumber  = rand(0, 100);
+    $secondNumber = rand(0, 100);
+    $operation = $operations[rand(0, 2)];
+    line ('Question: %d %s %d', $firstNumber, $operation, $secondNumber);
+
+    $userAnswer = prompt('Your answer');
+    $correctAnswer = calculateExpression($firstNumber, $secondNumber, $operation);
+
+    if ($userAnswer != $correctAnswer)
+    {
+        line("'%d' is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
+        line("Let's try again, %s!", $name);
+        break;
+    }
+
+    line('Correct!');
+}
+
+if ($currentRound === $numberOfRounds){
+    line('Congratulations, %s!', $name);
+}
+*/
+
+
+use function Brain\Games\Calc\calculateExpression;
+use function Brain\Games\Calc\generateMathExpression;
+
+use function Brain\Games\Engine\launch;
+
+
+launch('What is the result of the expression?', 'generateMathExpression', 'calculateExpression');

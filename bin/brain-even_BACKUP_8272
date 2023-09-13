@@ -1,4 +1,40 @@
 #!/usr/bin/env php
+<<<<<<< HEAD
+<?php
+//не знаю вставить приветсиве из дургого кода?
+require_once __DIR__ . '../../vendor/autoload.php';
+use function cli\line;
+use function cli\prompt;
+
+
+
+function ifEven(int $number): string
+{
+    
+    $answer = $number % 2 == 0 ? 'yes' : 'no';
+    return $answer;
+}
+
+
+
+$rounds_number = 3;
+line('Welcome to the Brain Games!');
+$name = prompt('May I have your name?');
+line('Hello, %s', $name);
+
+
+line('Answer "yes" if the number is even, otherwise "no".');
+$i = 0;
+for( ; $i < $rounds_number; $i++){
+    $number = rand();
+    line('Question: %d', $number);
+    $answer = prompt('Your answer');
+
+    if ($answer !== ifEven($number)){
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, ifEven($number));
+        line("Let's try again, %s", $name);
+=======
+
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -35,13 +71,22 @@ for ($currentRound; $currentRound < $numberOfRounds; $currentRound++)
     {
         line("'%s' is wrong answer ;(. Correct anwer was '%s'.", $userAnswer, $correctAnswer);
         line("Let's try again, %s!", $name);
+>>>>>>> branch1
         break;
     }
 
     line('Correct!');
 }
 
+<<<<<<< HEAD
+if ($i === 3){
+    line('COngratulations, %s!', $name);
+}
+=======
 if ($currentRound === $numberOfRounds){
     line('Congratulations, %s!', $name);
 }
 
+
+
+>>>>>>> branch1
