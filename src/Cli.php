@@ -2,7 +2,7 @@
 namespace Brain\Games\Cli;
 
 require_once __DIR__ . '/../vendor/autoload.php';
->>>>>>> branch1
+
 
 use function cli\line;
 use function cli\prompt;
