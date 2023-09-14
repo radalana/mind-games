@@ -48,7 +48,6 @@ function findPrime()
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         $randomNumber = rand(1, 3571);
         #$test = 2;
-        
         line('Question: %d', $randomNumber); // line('Question: %d', $randomNumber);
         $userAnswer = prompt('Your answer');
 
