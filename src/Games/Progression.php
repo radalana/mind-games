@@ -29,7 +29,7 @@ function printQuestion($progression, $lengthOfProgression, $possitionOfHiddenNum
     for ($i = 0; $i <  $lengthOfProgression; $i++) {
         if ($i === $possitionOfHiddenNumber) {
             print_r('.. ');
-        } else { 
+        } else {
             print_r("{$progression[$i]} ");
         }
     }
@@ -45,7 +45,7 @@ function playArithmeticProgression()
     $currentRound = 0;
 
     line('What number is missing in the progression?');
-    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {    
+    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         $lengthOfProgression = rand(5, 10);
         $possitionOfHiddenNumber = rand(0, $lengthOfProgression - 1);
         $progression = generateProgression($lengthOfProgression);

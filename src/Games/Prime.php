@@ -31,7 +31,6 @@ function isPrime($number)
     }
 
     return 'yes';
-
 }
 
 
