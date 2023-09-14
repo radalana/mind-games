@@ -25,10 +25,6 @@ function isPrime($number)
     $potentialDivisers = 5;
 
     for ($potentialDivisers; $potentialDivisers <= $border; $potentialDivisers += 2) {
-        if (($potentialDivisers % 3 === 0) || ($potentialDivisers % 5 === 0)) {
-            continue;
-        }
-
         if ($number % $potentialDivisers == 0) {
             return 'no';
         }
@@ -52,8 +48,9 @@ function findPrime()
 
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         $randomNumber = rand(1, 3571);
+        #$test = 3385;
 
-        line('Question: %d', $randomNumber);
+        line('Question: %d', $randomNumber); // line('Question: %d', $randomNumber);
         $userAnswer = prompt('Your answer');
 
         $correctAnswer = isPrime($randomNumber);
