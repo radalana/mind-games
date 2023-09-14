@@ -47,8 +47,7 @@ function findPrime()
 
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         $randomNumber = rand(1, 3571);
-        #$test = 3385;
-
+        
         line('Question: %d', $randomNumber); // line('Question: %d', $randomNumber);
         $userAnswer = prompt('Your answer');
 
@@ -61,8 +60,6 @@ function findPrime()
             break;
         }
     }
-    
-    
     if ($currentRound === $numberOfRounds) {
         line('Congratulations, %s!', $name);
     }
