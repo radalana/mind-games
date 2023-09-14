@@ -7,7 +7,7 @@ use function Brain\Games\Engine\greet;
 use function cli\line;
 use function cli\prompt;
 
-function calculateGreatestCommonDeviser($firstNumber, $secondNumber): int
+function calculateGreatestCommonDeviser(int $firstNumber, int $secondNumber): int
 {
     if ($firstNumber === 0 || $secondNumber === 0) {
         return $firstNumber + $secondNumber;

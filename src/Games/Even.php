@@ -8,7 +8,7 @@ use function cli\line;
 use function cli\prompt;
 
 
-function isEven($number): string
+function isEven(int $number): string
 {
     if ($number % 2 === 0) {
         return 'yes';

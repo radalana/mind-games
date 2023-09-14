@@ -7,7 +7,7 @@ use function Brain\Games\Engine\greet;
 use function cli\line;
 use function cli\prompt;
 
-function calculateExpression($firstNumber, $secondNumber, $operation)
+function calculateExpression(int $firstNumber, int $secondNumber, string $operation)
 {
     switch ($operation) {
         case '+':

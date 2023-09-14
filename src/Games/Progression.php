@@ -8,7 +8,7 @@ use function Brain\Games\Engine\greet;
 use function cli\line;
 use function cli\prompt;
 
-function generateProgression($lengthOfProgression)
+function generateProgression(int $lengthOfProgression)
 {
     $firstNumber = rand(-10, 10);
     $progression = [$firstNumber];
@@ -22,7 +22,7 @@ function generateProgression($lengthOfProgression)
     return $progression;
 }
 
-function printQuestion($progression, $lengthOfProgression, $possitionOfHiddenNumber)
+function printQuestion(array $progression, int $lengthOfProgression, int $possitionOfHiddenNumber)
 {
     print_r('Question: ');
 
