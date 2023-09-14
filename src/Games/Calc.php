@@ -9,21 +9,22 @@ use function cli\prompt;
 
 function calculateExpression($firstNumber, $secondNumber, $operation)
 {
-    switch($operation) {
-        case '+':
-            return $firstNumber + $secondNumber;
-        case '-':
-            return $firstNumber - $secondNumber;
-        case '*':
-            return $firstNumber * $secondNumber;
-        default:
-            return null;
+    switch ($operation) {
+    case '+':
+        return $firstNumber + $secondNumber;
+    case '-':
+        return $firstNumber - $secondNumber;
+    case '*':
+        return $firstNumber * $secondNumber;
+    default:
+        return null;
     }
 }
 
 
 
-function playCalculation(){
+function playCalculation()
+{
     $name = greet();
     print_r('What is the result of the expression?');
 
@@ -31,33 +32,29 @@ function playCalculation(){
     $currentRound = 0;
 
     $operations = ['+', '-', '*'];
-    for($currentRound; $currentRound < $numberOfRounds; $currentRound++)
-    {
+    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
 
         $firstNumber  = rand(0, 100);
         $secondNumber = rand(0, 100);
         $operation = $operations[rand(0, 2)];
-        line ('Question: %d %s %d', $firstNumber, $operation, $secondNumber);
+        line('Question: %d %s %d', $firstNumber, $operation, $secondNumber);
 
         $userAnswer = prompt('Your answer');
         $correctAnswer = calculateExpression($firstNumber, $secondNumber, $operation);
 
-    if ($userAnswer != $correctAnswer)
-    {
-        line("'%d' is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
-        line("Let's try again, %s!", $name);
-        break;
+        if ($userAnswer != $correctAnswer) {
+            line("'%d' is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
+            line("Let's try again, %s!", $name);
+            break;
+        }
+
+        line('Correct!');
     }
 
-    line('Correct!');
-    }
-
-    if ($currentRound === $numberOfRounds){
+    if ($currentRound === $numberOfRounds) {
         line('Congratulations, %s!', $name);
     }
-    
 }
-
 
 
 

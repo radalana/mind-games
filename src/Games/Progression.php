@@ -15,8 +15,7 @@ function generateProgression($lengthOfProgression)
 
     $diff = rand(-10, 10);
 
-    for ($i = 1; $i < $lengthOfProgression; $i++)
-    {
+    for ($i = 1; $i < $lengthOfProgression; $i++) {
         $progression[$i] = $progression[$i-1] + $diff;
     }
 
@@ -28,12 +27,10 @@ function printQuestion($progression, $lengthOfProgression, $possitionOfHiddenNum
 {
     print_r('Question: ');
 
-    for ($i = 0; $i <  $lengthOfProgression; $i++)
-    {
-        if ($i === $possitionOfHiddenNumber)
-        {
+    for ($i = 0; $i <  $lengthOfProgression; $i++) {
+        if ($i === $possitionOfHiddenNumber) {
             print_r('.. ');
-        }else{
+        } else { 
             print_r("{$progression[$i]} ");
         }
     }
@@ -41,15 +38,15 @@ function printQuestion($progression, $lengthOfProgression, $possitionOfHiddenNum
     print_r("\n");
 }
 
-function playArithmeticProgression(){
+function playArithmeticProgression()
+{
     $name = greet();
 
     $numberOfRounds = 3;
     $currentRound = 0;
 
     line('What number is missing in the progression?');
-    for($currentRound; $currentRound < $numberOfRounds; $currentRound++)
-    {
+    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         
 
         $lengthOfProgression = rand(5, 10);
@@ -61,8 +58,7 @@ function playArithmeticProgression(){
         $userAnswer = prompt('Your answer');
         $correctAnswer = $progression[$possitionOfHiddenNumber];
 
-        if ($userAnswer != $correctAnswer)
-        {
+        if ($userAnswer != $correctAnswer) {
             line("'%d is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
             break;
@@ -70,7 +66,7 @@ function playArithmeticProgression(){
     }
     
     
-    if ($currentRound === $numberOfRounds){
+    if ($currentRound === $numberOfRounds) {
         line('Congratulations, %s!', $name);
     }
 }

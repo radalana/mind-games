@@ -12,14 +12,12 @@ use function cli\prompt;
 
 function isPrime($number)
 {
-    if ($number === 1)
-    {
+    if ($number === 1) {
         return 'no';
     }
 
 
-    if (($number % 2 === 0) || ($number % 3 === 0))
-    {
+    if (($number % 2 === 0) || ($number % 3 === 0)) {
         return 'no';
     }
 
@@ -27,14 +25,12 @@ function isPrime($number)
 
     $potentialDivisers = 5;
 
-    for ($potentialDivisers; $potentialDivisers < $border; $potentialDivisers += 2)
-    {
-        if (($potentialDivisers % 3 === 0) || ($potentialDivisers % 5 === 0))
-        {
+    for ($potentialDivisers; $potentialDivisers < $border; $potentialDivisers += 2) {
+        if (($potentialDivisers % 3 === 0) || ($potentialDivisers % 5 === 0)) {
             continue;
         }
 
-        if ($number % $potentialDivisers == 0){
+        if ($number % $potentialDivisers == 0) {
             return 'no';
         }
 
@@ -56,8 +52,7 @@ function findPrime()
 
 
 
-    for($currentRound; $currentRound < $numberOfRounds; $currentRound++)
-    {
+    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         $randomNumber = rand(1, 3571);
 
         line('Question: %d', $randomNumber);
@@ -66,8 +61,7 @@ function findPrime()
         $correctAnswer = isPrime($randomNumber);
 
 
-        if ($userAnswer != $correctAnswer)
-        {
+        if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct anwer was '%s'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
             break;
@@ -75,7 +69,7 @@ function findPrime()
     }
     
     
-    if ($currentRound === $numberOfRounds){
+    if ($currentRound === $numberOfRounds) {
         line('Congratulations, %s!', $name);
     }
 
