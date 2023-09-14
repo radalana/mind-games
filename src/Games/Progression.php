@@ -47,9 +47,10 @@ function playArithmeticProgression(){
     $numberOfRounds = 3;
     $currentRound = 0;
 
+    line('What number is missing in the progression?');
     for($currentRound; $currentRound < $numberOfRounds; $currentRound++)
     {
-        line('What number is missing in the progression?');
+        
 
         $lengthOfProgression = rand(5, 10);
         $possitionOfHiddenNumber = rand(0, $lengthOfProgression-1);
