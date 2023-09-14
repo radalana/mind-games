@@ -63,7 +63,7 @@ function playArithmeticProgression(){
 
         if ($userAnswer != $correctAnswer)
         {
-            line("'%d' is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
+            line("'%d is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
             break;
         }
