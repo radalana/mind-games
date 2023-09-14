@@ -6,6 +6,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use function Brain\Games\Cli\greet;
 
 greet();
-echo 'dd';
+
 
 
