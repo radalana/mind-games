@@ -10,13 +10,13 @@ use function cli\prompt;
 function calculateExpression($firstNumber, $secondNumber, $operation)
 {
     switch ($operation) {
-        case '+':
+    case '+':
         return $firstNumber + $secondNumber;
-        case '-':
+    case '-':
         return $firstNumber - $secondNumber;
-        case '*':
+    case '*':
         return $firstNumber * $secondNumber;
-        default:
+    default:
         return null;
     }
 }
