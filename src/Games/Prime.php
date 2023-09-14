@@ -24,7 +24,7 @@ function isPrime($number)
 
     $potentialDivisers = 5;
 
-    for ($potentialDivisers; $potentialDivisers < $border; $potentialDivisers += 2) {
+    for ($potentialDivisers; $potentialDivisers <= $border; $potentialDivisers += 2) {
         if (($potentialDivisers % 3 === 0) || ($potentialDivisers % 5 === 0)) {
             continue;
         }
