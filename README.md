@@ -9,4 +9,6 @@
 
 [![asciicast](https://asciinema.org/a/607729.svg)](https://asciinema.org/a/607729 "Пример игры brain-gcd с использованием команды make, где нужно найти наиюольший общий делитель")
 
-[![asciicast](https://asciinema.org/a/607738.svg)](https://asciinema.org/a/607738 "Пример игры brain-progression c использованием команды make, где нужно вставить пропущенный член арифметической прогрессии") 
+[![asciicast](https://asciinema.org/a/607738.svg)](https://asciinema.org/a/607738 "Пример игры brain-progression c использованием команды make, где нужно вставить пропущенный член арифметической прогрессии")
+
+[![asciicast](https://asciinema.org/a/607855.svg)](https://asciinema.org/a/607855 "Пример игры brain-prime с использованием команды make, где нужно ответить является ли данное число простым") 
