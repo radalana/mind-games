@@ -2,7 +2,6 @@
 
 namespace Brain\Games\Prime;
 
-
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 use function Brain\Games\Engine\greet;
@@ -33,7 +32,6 @@ function isPrime($number)
         if ($number % $potentialDivisers == 0) {
             return 'no';
         }
-
     }
 
     return 'yes';
@@ -72,8 +70,4 @@ function findPrime()
     if ($currentRound === $numberOfRounds) {
         line('Congratulations, %s!', $name);
     }
-
-
-
-    
 }

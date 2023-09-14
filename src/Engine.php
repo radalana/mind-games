@@ -2,13 +2,9 @@
 
 namespace Brain\Games\Engine;
 
-
 use function cli\line;
 use function cli\prompt;
-
-
-
-function greet() : string
+function greet(): string
 { 
     
     line('Welcome to the Brain Game!');
@@ -17,6 +13,3 @@ function greet() : string
     
     return $name;
 }
-
-
-

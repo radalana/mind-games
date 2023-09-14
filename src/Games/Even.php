@@ -8,20 +8,19 @@ use function cli\line;
 use function cli\prompt;
 
 
-function isEven($number) : string
+function isEven($number): string
 {
     if ($number % 2 === 0) {
         return 'yes';
     }
 
-    return 'no'; 
+    return 'no';
 }
 
 function playEven()
 {
     $name = greet();
     line('Answer "yes" if the number is even, otherwise answer "no".');
-    
     $numberOfRounds = 3;
     $currentRound = 0;
 

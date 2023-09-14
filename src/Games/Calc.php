@@ -10,13 +10,13 @@ use function cli\prompt;
 function calculateExpression($firstNumber, $secondNumber, $operation)
 {
     switch ($operation) {
-    case '+':
+        case '+':
         return $firstNumber + $secondNumber;
-    case '-':
+        case '-':
         return $firstNumber - $secondNumber;
-    case '*':
+        case '*':
         return $firstNumber * $secondNumber;
-    default:
+        default:
         return null;
     }
 }
@@ -33,7 +33,6 @@ function playCalculation()
 
     $operations = ['+', '-', '*'];
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
-
         $firstNumber  = rand(0, 100);
         $secondNumber = rand(0, 100);
         $operation = $operations[rand(0, 2)];
@@ -55,13 +54,3 @@ function playCalculation()
         line('Congratulations, %s!', $name);
     }
 }
-
-
-
-
-
-
-
-
-
-

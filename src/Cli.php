@@ -1,4 +1,5 @@
 <?php
+
 namespace Brain\Games\Cli;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -13,5 +14,3 @@ function greet()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 }
-
-

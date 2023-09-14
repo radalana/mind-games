@@ -16,11 +16,10 @@ function generateProgression($lengthOfProgression)
     $diff = rand(-10, 10);
 
     for ($i = 1; $i < $lengthOfProgression; $i++) {
-        $progression[$i] = $progression[$i-1] + $diff;
+        $progression[$i] = $progression[$i - 1] + $diff;
     }
 
     return $progression;
-
 }
 
 function printQuestion($progression, $lengthOfProgression, $possitionOfHiddenNumber)
@@ -46,11 +45,9 @@ function playArithmeticProgression()
     $currentRound = 0;
 
     line('What number is missing in the progression?');
-    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
-        
-
+    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {    
         $lengthOfProgression = rand(5, 10);
-        $possitionOfHiddenNumber = rand(0, $lengthOfProgression-1);
+        $possitionOfHiddenNumber = rand(0, $lengthOfProgression - 1);
         $progression = generateProgression($lengthOfProgression);
 
         printQuestion($progression, $lengthOfProgression, $possitionOfHiddenNumber);
@@ -64,8 +61,6 @@ function playArithmeticProgression()
             break;
         }
     }
-    
-    
     if ($currentRound === $numberOfRounds) {
         line('Congratulations, %s!', $name);
     }
