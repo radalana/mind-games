@@ -3,7 +3,7 @@
 namespace Code\Games\Calc;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-use function Brain\Games\Engine\greet;
+use function Code\Engine\greet;
 use function cli\line;
 use function cli\prompt;
 
