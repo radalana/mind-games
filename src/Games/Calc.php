@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Calc;
+namespace Code\Games\Calc;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 use function Brain\Games\Engine\greet;

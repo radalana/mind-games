@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Prime;
+namespace Code\Games\Prime;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
