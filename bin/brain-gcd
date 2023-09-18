@@ -12,7 +12,7 @@ if (file_exists($autoloadPath2)) {
     require_once $autoloadPath1;
 }
 
-use function Brain\Games\Gcd\findGreatestCommonDeviser;
+use function Code\Games\Gcd\findGreatestCommonDeviser;
 
 findGreatestCommonDeviser();
 

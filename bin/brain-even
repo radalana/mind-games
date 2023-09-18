@@ -3,7 +3,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function Brain\Games\Even\playEven;
+use function Code\Games\Even\playEven;
 
 
 playEven();
