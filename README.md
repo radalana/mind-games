@@ -34,7 +34,7 @@ make install
 ```bash
 make brain-even
 ```
-[![asciinema](https://asciinema.org/a/606540 "Пример игры brain-even с использование команды make, где нужно определить является число четным или нет")
+[![asciicast](https://asciinema.org/a/606540.svg)](https://asciinema.org/a/606540 "Пример игры brain-even с использование команды make, где нужно определить является число четным или нет")
 
 ### Калькулятор
 
