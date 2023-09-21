@@ -2,7 +2,6 @@
 
 namespace Code\Games\Even;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
 use function Code\Engine\greet;
 use function cli\line;
 use function cli\prompt;
