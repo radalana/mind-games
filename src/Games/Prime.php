@@ -6,7 +6,6 @@ use function Code\Engine\greet;
 use function cli\line;
 use function cli\prompt;
 
-
 function isPrime(int $number)
 {
     if (($number === 1) || ($number === 2)) {

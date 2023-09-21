@@ -6,7 +6,6 @@ use function Code\Engine\greet;
 use function cli\line;
 use function cli\prompt;
 
-
 function isEven(int $number): string
 {
     if ($number % 2 === 0) {
