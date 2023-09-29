@@ -23,7 +23,7 @@ function playGame(callable $generateQuestion, callable $checkAnswer, callable $p
 
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         $question = $generateQuestion();
-        line($question);
+        line('Question: %s', (string) $question);
         $userAnswer = prompt('Your answer');
         $correctAnswer = $checkAnswer($question);
 
