@@ -2,19 +2,32 @@
 
 namespace Code\Games\Even;
 
+use function Code\Engine\playGame;
 use function Code\Engine\greet;
 use function cli\line;
 use function cli\prompt;
 
-function isEven(int $number): string
-{
-    if ($number % 2 === 0) {
-        return 'yes';
-    }
+function playEven() {
+    $isEven = function(int $number) {
+        if ($number % 2 === 0) {
+            return 'yes';
+        }
+    
+        return 'no';
+    };
+    
+    $generateNumber = function() {
+        return rand();
+    };
+    
+    $printTask = function() {
+        line('Answer "yes" if the number is even, otherwise answer "no".');
+    };
 
-    return 'no';
+    playGame($generateNumber, $isEven, $printTask);
 }
 
+/*
 function playEven()
 {
     $name = greet();
@@ -41,3 +54,4 @@ function playEven()
         line('Congratulations, %s!', $name);
     }
 }
+*/

@@ -12,3 +12,32 @@ function greet(): string
     line("Hello, %s!", $name);
     return $name;
 }
+
+function playGame(callable $generateQuestion, callable $checkAnswer, callable $printTask)
+{
+    $name = greet();
+    $printTask();
+
+    $numberOfRounds = 3;
+    $currentRound = 0;
+
+    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
+        $question = $generateQuestion();
+        line($question);
+        $userAnswer = prompt('Your answer');
+        $correctAnswer = $checkAnswer($question);
+
+        if ($userAnswer != $correctAnswer) {
+            line("'%s' is wrong answer ;(. Correct anwer was '%s'.", $userAnswer, $correctAnswer);
+            line("Let's try again, %s!", $name);
+            break;
+        }
+
+        line('Correct!');
+    }
+
+    if ($currentRound === $numberOfRounds) {
+        line('Congratulations, %s!', $name);
+    }
+}
+
