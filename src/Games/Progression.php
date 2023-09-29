@@ -26,7 +26,7 @@ function progressionToString(array $progression, int $lengthOfProgression, int $
         if ($i === $possitionOfHiddenNumber) {
             $array[] = '..';
         } else {
-            $array[] = "{$progression[$i]} ";
+            $array[] = "{$progression[$i]}";
         }
     }
     return implode(" ", $array);
