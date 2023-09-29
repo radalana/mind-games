@@ -2,9 +2,8 @@
 
 namespace Code\Games\Progression;
 
-use function Code\Engine\greet;
+use function Code\Engine\playGame;
 use function cli\line;
-use function cli\prompt;
 
 function generateProgression(int $lengthOfProgression)
 {
@@ -20,46 +19,35 @@ function generateProgression(int $lengthOfProgression)
     return $progression;
 }
 
-function printQuestion(array $progression, int $lengthOfProgression, int $possitionOfHiddenNumber)
+function progressionToString(array $progression, int $lengthOfProgression, int $possitionOfHiddenNumber): string
 {
-    print_r('Question: ');
-
+    $array = [];
     for ($i = 0; $i <  $lengthOfProgression; $i++) {
         if ($i === $possitionOfHiddenNumber) {
-            print_r('.. ');
+            $array[] = '..';
         } else {
-            print_r("{$progression[$i]} ");
+            $array[] = "{$progression[$i]} ";
         }
     }
-
-    print_r("\n");
+    return implode(" ", $array);
 }
 
 function playArithmeticProgression()
 {
-    $name = greet();
-
-    $numberOfRounds = 3;
-    $currentRound = 0;
-
-    line('What number is missing in the progression?');
-    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
+    $printTask = function () {
+        line('What number is missing in the progression?');
+    };
+    $answer = null;
+    $generateQuestion = function () use (&$answer){
         $lengthOfProgression = rand(5, 10);
         $possitionOfHiddenNumber = rand(0, $lengthOfProgression - 1);
         $progression = generateProgression($lengthOfProgression);
+        $answer = $progression[$possitionOfHiddenNumber];
+        return progressionToString($progression, $lengthOfProgression, $possitionOfHiddenNumber);
+    };
 
-        printQuestion($progression, $lengthOfProgression, $possitionOfHiddenNumber);
-
-        $userAnswer = prompt('Your answer');
-        $correctAnswer = $progression[$possitionOfHiddenNumber];
-
-        if ($userAnswer != $correctAnswer) {
-            line("'%d is wrong answer ;(. Correct anwer was '%d'.", $userAnswer, $correctAnswer);
-            line("Let's try again, %s!", $name);
-            break;
-        }
-    }
-    if ($currentRound === $numberOfRounds) {
-        line('Congratulations, %s!', $name);
-    }
+    $findNumber = function (string $progression) use (&$answer) {
+        return $answer;
+    };
+    playGame($generateQuestion, $findNumber, $printTask);
 }
