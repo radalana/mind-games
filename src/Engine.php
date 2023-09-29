@@ -40,4 +40,3 @@ function playGame(callable $generateQuestion, callable $checkAnswer, callable $p
         line('Congratulations, %s!', $name);
     }
 }
-

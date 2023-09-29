@@ -11,14 +11,11 @@ function playEven()
         if ($number % 2 === 0) {
             return 'yes';
         }
-    
         return 'no';
     };
-    
     $generateNumber = function () {
         return rand();
     };
-    
     $printTask = function () {
         line('Answer "yes" if the number is even, otherwise answer "no".');
     };

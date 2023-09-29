@@ -10,7 +10,6 @@ function findGreatestCommonDeviser()
     $printTask = function () {
         line('Find the greatest common divisor of given numbers.');
     };
-    
     $generateQuestion = function () {
         $firstNumber = rand(0, 50);
         $secondNumber = rand(0, 50);

@@ -30,18 +30,16 @@ function playCalculation()
         $operation = $arrayExpression[1];
 
         switch ($operation) {
-        case '+':
-            return $firstNumber + $secondNumber;
-        case '-':
-            return $firstNumber - $secondNumber;
-        case '*':
-            return $firstNumber * $secondNumber;
-        default:
-            return throw new \Exception('Error: not valid operation!');
+            case '+':
+                return $firstNumber + $secondNumber;
+            case '-':
+                return $firstNumber - $secondNumber;
+            case '*':
+                return $firstNumber * $secondNumber;
+            default:
+                return throw new \Exception('Error: not valid operation!');
         }
     };
 
-    
-    
     playGame($genereteExpression, $calculateExpression, $printTask);
 }
