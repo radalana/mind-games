@@ -3,9 +3,7 @@
 namespace Code\Games\Even;
 
 use function Code\Engine\playGame;
-use function Code\Engine\greet;
 use function cli\line;
-use function cli\prompt;
 
 function playEven() {
     $isEven = function(int $number) {
