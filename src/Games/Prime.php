@@ -2,12 +2,20 @@
 
 namespace Code\Games\Prime;
 
-use function Code\Engine\greet;
+use function Code\Engine\playGame;
 use function cli\line;
-use function cli\prompt;
 
-function isPrime(int $number)
+function findPrime()
 {
+    $printTask = function () {
+        line('Answer "yes" if given number is prime. Otherwise answer "no".');
+    };
+    
+    $generateNumber = function () {
+        return rand(1, 3571);
+    };
+    
+    $isPrime = function (int $number) {
     if (($number === 1) || ($number === 2)) {
         return 'no';
     }
@@ -27,37 +35,9 @@ function isPrime(int $number)
         }
     }
 
-    return 'yes';
-}
+        return 'yes';
+    };
 
+    playGame($generateNumber, $isPrime, $printTask);
 
-function findPrime()
-{
-    $name = greet();
-
-    line('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-    $numberOfRounds = 3;
-    $currentRound = 0;
-
-
-
-    for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
-        $randomNumber = rand(1, 3571);
-        #$test = 2;
-        line('Question: %d', $randomNumber); // line('Question: %d', $randomNumber);
-        $userAnswer = prompt('Your answer');
-
-        $correctAnswer = isPrime($randomNumber);
-
-
-        if ($userAnswer != $correctAnswer) {
-            line("'%s' is wrong answer ;(. Correct anwer was '%s'.", $userAnswer, $correctAnswer);
-            line("Let's try again, %s!", $name);
-            break;
-        }
-    }
-    if ($currentRound === $numberOfRounds) {
-        line('Congratulations, %s!', $name);
-    }
 }
