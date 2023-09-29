@@ -5,8 +5,9 @@ namespace Code\Games\Even;
 use function Code\Engine\playGame;
 use function cli\line;
 
-function playEven() {
-    $isEven = function(int $number) {
+function playEven()
+{
+    $isEven = function (int $number) {
         if ($number % 2 === 0) {
             return 'yes';
         }
@@ -14,11 +15,11 @@ function playEven() {
         return 'no';
     };
     
-    $generateNumber = function() {
+    $generateNumber = function () {
         return rand();
     };
     
-    $printTask = function() {
+    $printTask = function () {
         line('Answer "yes" if the number is even, otherwise answer "no".');
     };
 

@@ -38,7 +38,7 @@ function playArithmeticProgression()
         line('What number is missing in the progression?');
     };
     $answer = null;
-    $generateQuestion = function () use (&$answer){
+    $generateQuestion = function () use (&$answer) {
         $lengthOfProgression = rand(5, 10);
         $possitionOfHiddenNumber = rand(0, $lengthOfProgression - 1);
         $progression = generateProgression($lengthOfProgression);
