@@ -11,8 +11,8 @@ function findGreatestCommonDeviser()
         line('Find the greatest common divisor of given numbers.');
     };
     $generateQuestion = function () {
-        $firstNumber = rand(0, 50);
-        $secondNumber = rand(0, 50);
+        $firstNumber = rand(1, 50);
+        $secondNumber = rand(1, 50);
         return "{$firstNumber} {$secondNumber}";
     };
 
