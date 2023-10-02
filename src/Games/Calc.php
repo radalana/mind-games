@@ -24,8 +24,8 @@ function playCalculation()
 
     $calculateExpression = function (string $stringExpression) {
         $arrayExpression = explode(" ", $stringExpression);
-        $firstNumber = $arrayExpression[0];
-        $secondNumber = $arrayExpression[2];
+        $firstNumber = (int) $arrayExpression[0];
+        $secondNumber = (int) $arrayExpression[2];
 
         $operation = $arrayExpression[1];
 
