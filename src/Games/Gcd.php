@@ -18,8 +18,8 @@ function findGreatestCommonDeviser()
 
     $calculateGreatestCommonDeviser = function (string $stringTask) {
         $arrayNumbers = explode(" ", $stringTask);
-        $firstNumber = $arrayNumbers[0];
-        $secondNumber = $arrayNumbers[1];
+        $firstNumber = (int) $arrayNumbers[0];
+        $secondNumber = (int) $arrayNumbers[1];
 
         if ($firstNumber === 0 || $secondNumber === 0) {
             return $firstNumber + $secondNumber;
