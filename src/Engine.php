@@ -30,13 +30,12 @@ function playGame(callable $generateQuestion, callable $checkAnswer, callable $p
         if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct anwer was '%s'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
-            break;
+            return;
         }
 
         line('Correct!');
     }
 
-    if ($currentRound === $numberOfRounds) {
-        line('Congratulations, %s!', $name);
-    }
+    line('Congratulations, %s!', $name);
+    
 }
