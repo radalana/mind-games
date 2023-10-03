@@ -9,11 +9,12 @@ function findGreatestCommonDeviser()
 {
      $task = 'Find the greatest common divisor of given numbers.';
     
-    $generateQuestion = function () {
+    function generateQuestion() 
+    {
         $firstNumber = rand(1, 50);
         $secondNumber = rand(1, 50);
         return "{$firstNumber} {$secondNumber}";
-    };
+    }
 
     $calculateGreatestCommonDeviser = function (string $stringTask) {
         $arrayNumbers = explode(" ", $stringTask);
@@ -33,6 +34,6 @@ function findGreatestCommonDeviser()
 
         return $firstNumber;
     };
-
-    playGame($generateQuestion, $calculateGreatestCommonDeviser, $task);
+    
+    playGame('generateQuestion', $calculateGreatestCommonDeviser, $task);
 }
