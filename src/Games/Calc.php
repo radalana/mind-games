@@ -7,10 +7,7 @@ use function cli\line;
 
 function playCalculation()
 {
-    $printTask = function () {
-        line('What is the result of the expression?');
-    };
-
+    $task = 'What is the result of the expression?';
 
     $genereteExpression = function () {
         $firstNumber  = rand(0, 100);
@@ -41,5 +38,5 @@ function playCalculation()
         }
     };
 
-    playGame($genereteExpression, $calculateExpression, $printTask);
+    playGame($genereteExpression, $calculateExpression, $task);
 }

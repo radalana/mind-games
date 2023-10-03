@@ -13,10 +13,10 @@ function greet(): string
     return $name;
 }
 
-function playGame(callable $generateQuestion, callable $checkAnswer, callable $printTask)
+function playGame(callable $generateQuestion, callable $checkAnswer, string $task)
 {
     $name = greet();
-    $printTask();
+    line($task);
 
     $numberOfRounds = 3;
     $currentRound = 0;

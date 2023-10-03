@@ -16,9 +16,8 @@ function playEven()
     $generateNumber = function () {
         return rand();
     };
-    $printTask = function () {
-        line('Answer "yes" if the number is even, otherwise answer "no".');
-    };
+    
+    $task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-    playGame($generateNumber, $isEven, $printTask);
+    playGame($generateNumber, $isEven, $task);
 }

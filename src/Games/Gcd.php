@@ -7,9 +7,8 @@ use function cli\line;
 
 function findGreatestCommonDeviser()
 {
-    $printTask = function () {
-        line('Find the greatest common divisor of given numbers.');
-    };
+     $task = 'Find the greatest common divisor of given numbers.';
+    
     $generateQuestion = function () {
         $firstNumber = rand(1, 50);
         $secondNumber = rand(1, 50);
@@ -35,5 +34,5 @@ function findGreatestCommonDeviser()
         return $firstNumber;
     };
 
-    playGame($generateQuestion, $calculateGreatestCommonDeviser, $printTask);
+    playGame($generateQuestion, $calculateGreatestCommonDeviser, $task);
 }

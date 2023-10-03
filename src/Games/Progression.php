@@ -34,9 +34,8 @@ function progressionToString(array $progression, int $lengthOfProgression, int $
 
 function playArithmeticProgression()
 {
-    $printTask = function () {
-        line('What number is missing in the progression?');
-    };
+    
+    $task = 'What number is missing in the progression?';
     $answer = null;
     $generateQuestion = function () use (&$answer) {
         $lengthOfProgression = rand(5, 10);
@@ -49,5 +48,5 @@ function playArithmeticProgression()
     $findNumber = function (string $progression) use (&$answer) {
         return $answer;
     };
-    playGame($generateQuestion, $findNumber, $printTask);
+    playGame($generateQuestion, $findNumber, $task);
 }

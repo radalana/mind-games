@@ -7,9 +7,7 @@ use function cli\line;
 
 function findPrime()
 {
-    $printTask = function () {
-        line('Answer "yes" if given number is prime. Otherwise answer "no".');
-    };
+    $task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $generateNumber = function () {
         return rand(1, 3571);
     };
@@ -36,5 +34,5 @@ function findPrime()
         return 'yes';
     };
 
-    playGame($generateNumber, $isPrime, $printTask);
+    playGame($generateNumber, $isPrime, $task);
 }
