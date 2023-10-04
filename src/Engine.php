@@ -13,7 +13,7 @@ function greet(): string
     return $name;
 }
 
-function playGame(string $generateQuestion, callable $checkAnswer, string $task)
+function playGame(string $generateQuestion, string $checkAnswer, string $task)
 {
     $name = greet();
     line($task);
