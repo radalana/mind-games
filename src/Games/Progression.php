@@ -13,7 +13,7 @@ function generateProgression(int $lengthOfProgression)
     $diff = rand(-10, 10);
 
     for ($i = 1; $i < $lengthOfProgression; $i++) {
-        $progression[$i] = $progression[$i - 1] + $diff;
+        $progression[$i] = $firstNumber + ($i * $diff);
     }
 
     return $progression;
@@ -32,18 +32,20 @@ function progressionToString(array $progression, int $lengthOfProgression, int $
     return implode(" ", $array);
 }
 
+function generateQuestion() use (&$answer) {
+    $lengthOfProgression = rand(5, 10);
+    $possitionOfHiddenNumber = rand(0, $lengthOfProgression - 1);
+    $progression = generateProgression($lengthOfProgression);
+    $answer = $progression[$possitionOfHiddenNumber];
+    return progressionToString($progression, $lengthOfProgression, $possitionOfHiddenNumber);
+}
+
 function playArithmeticProgression()
 {
     
     $task = 'What number is missing in the progression?';
     $answer = null;
-    $generateQuestion = function () use (&$answer) {
-        $lengthOfProgression = rand(5, 10);
-        $possitionOfHiddenNumber = rand(0, $lengthOfProgression - 1);
-        $progression = generateProgression($lengthOfProgression);
-        $answer = $progression[$possitionOfHiddenNumber];
-        return progressionToString($progression, $lengthOfProgression, $possitionOfHiddenNumber);
-    };
+    
 
     $findNumber = function (string $progression) use (&$answer) {
         return $answer;
