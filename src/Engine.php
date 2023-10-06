@@ -50,7 +50,6 @@ function playGame(string $generateQuestion, string $task)
         line('Question: %s', (string) $question);
         $userInput = prompt('Your answer');
         $userAnswer = inputToBool($userInput);
-        
         if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userInput, boolToAnswer($correctAnswer));
             line("Let's try again, %s!", $name);

@@ -28,8 +28,6 @@ function generateQuestion()
     return ['question' => "{$firstNumber} {$secondNumber}", 'answer' => $answer];
 }
 
-
-
 function findGreatestCommonDeviser()
 {
      $task = 'Find the greatest common divisor of given numbers.';
