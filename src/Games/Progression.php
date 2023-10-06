@@ -3,7 +3,8 @@
 namespace Code\Games\Progression;
 
 use function Code\Engine\playGame;
-use function cli\line;
+
+
 
 function generateProgression(int $lengthOfProgression)
 {
@@ -31,24 +32,19 @@ function progressionToString(array $progression, int $lengthOfProgression, int $
     }
     return implode(" ", $array);
 }
-
-function generateQuestion() use (&$answer) {
+function generateQuestion()
+{
     $lengthOfProgression = rand(5, 10);
     $possitionOfHiddenNumber = rand(0, $lengthOfProgression - 1);
     $progression = generateProgression($lengthOfProgression);
+
     $answer = $progression[$possitionOfHiddenNumber];
-    return progressionToString($progression, $lengthOfProgression, $possitionOfHiddenNumber);
+    $qustion =  progressionToString($progression, $lengthOfProgression, $possitionOfHiddenNumber);
+    return ['question' => $qustion, 'answer' => $answer];
 }
 
 function playArithmeticProgression()
 {
-    
     $task = 'What number is missing in the progression?';
-    $answer = null;
-    
-
-    $findNumber = function (string $progression) use (&$answer) {
-        return $answer;
-    };
-    playGame($generateQuestion, $findNumber, $task);
+    playGame('Code\Games\Progression\generateQuestion', $task);
 }

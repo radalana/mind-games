@@ -13,7 +13,39 @@ function greet(): string
     return $name;
 }
 
-function playGame(string $generateQuestion, string $checkAnswer, string $task)
+/*
+function boolToanswer($input)
+{
+    $type = gettype($input);
+    if ($type === 'bool') {
+        return $input === true ? 'yes' : 'no';
+    }
+    return $input;
+}
+*/
+
+function inputToBool($input)
+{   
+    #не switch, для строгого сравнения
+    if ($input === 'yes') {
+        return true;
+    } else if ($input === 'no') {
+        return false;
+    } else {
+        return $input;
+    }
+}
+
+function boolToAnswer ($bool) {
+    if ($bool === true) {
+        return 'yes';
+    }else if ($bool === false) {
+        return 'no';
+    } else {
+        return $bool;
+    }
+}
+function playGame(string $generateQuestion, string $task)
 {
     $name = greet();
     line($task);
@@ -22,13 +54,17 @@ function playGame(string $generateQuestion, string $checkAnswer, string $task)
     $currentRound = 0;
 
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
-        $question = $generateQuestion();
+        #$question = $generateQuestion()[];
+        $questionAnswer = $generateQuestion();
+        $question = $questionAnswer['question'];
+        $correctAnswer = $questionAnswer['answer'];
         line('Question: %s', (string) $question);
-        $userAnswer = prompt('Your answer');
-        $correctAnswer = $checkAnswer($question);
+        $userInput = prompt('Your answer');
+        $userAnswer = inputToBool($userInput);
 
+        #$correctAnswer = $checkAnswer($question);
         if ($userAnswer != $correctAnswer) {
-            line("'%s' is wrong answer ;(. Correct anwer was '%s'.", $userAnswer, $correctAnswer);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userInput, boolToAnswer($correctAnswer));
             line("Let's try again, %s!", $name);
             return;
         }

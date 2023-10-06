@@ -4,18 +4,7 @@ namespace Code\Games\Gcd;
 
 use function Code\Engine\playGame;
 
-function generateQuestion() 
-{
-    $firstNumber = rand(1, 50);
-    $secondNumber = rand(1, 50);
-    return "{$firstNumber} {$secondNumber}";
-}
-
-function calculateGreatestCommonDeviser (string $stringTask) {
-    $arrayNumbers = explode(" ", $stringTask);
-    $firstNumber = (int) $arrayNumbers[0];
-    $secondNumber = (int) $arrayNumbers[1];
-
+function calculateGreatestCommonDeviser ($firstNumber, $secondNumber) {
     if ($firstNumber === 0 || $secondNumber === 0) {
         return $firstNumber + $secondNumber;
     }
@@ -30,8 +19,19 @@ function calculateGreatestCommonDeviser (string $stringTask) {
     return $firstNumber;
 }
 
+function generateQuestion() 
+{
+    $firstNumber = rand(1, 50);
+    $secondNumber = rand(1, 50);
+
+    $answer = calculateGreatestCommonDeviser($firstNumber, $secondNumber);
+    return ['question' => "{$firstNumber} {$secondNumber}", 'answer' => $answer];
+}
+
+
+
 function findGreatestCommonDeviser()
 {
      $task = 'Find the greatest common divisor of given numbers.';
-    playGame('Code\Games\Gcd\generateQuestion', 'Code\Games\Gcd\calculateGreatestCommonDeviser', $task);
+    playGame('Code\Games\Gcd\generateQuestion', $task);
 }

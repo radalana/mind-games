@@ -6,19 +6,20 @@ use function Code\Engine\playGame;
 
 function isEven(int $number)
 {
-    if ($number % 2 === 0) {
-        return 'yes';
-    }
-    return 'no';
+    return $number % 2 === 0 ? true : false;
 }
 
 function generateNumber()
 {
-    return rand();
+    $question = rand();
+    $answer = isEven($question);
+
+    return ['question' => $question, 'answer' => $answer];
+
 }
 
 function playEven()
 {
     $task = 'Answer "yes" if the number is even, otherwise answer "no".';
-    playGame('Code\Games\Even\generateNumber', 'Code\Games\Even\isEven', $task);
+    playGame('Code\Games\Even\generateNumber', $task);
 }
