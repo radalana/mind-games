@@ -13,7 +13,7 @@ function greet(): string
     return $name;
 }
 
-function inputToBool($input)
+function inputToBool(string $input)
 {
     #не switch, для строгого сравнения
     if ($input === 'yes') {
@@ -25,7 +25,7 @@ function inputToBool($input)
     }
 }
 
-function boolToAnswer($bool)
+function boolToAnswer(bool $bool)
 {
     if ($bool === true) {
         return 'yes';
@@ -44,15 +44,13 @@ function playGame(string $generateQuestion, string $task)
     $currentRound = 0;
 
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
-        #$question = $generateQuestion()[];
         $questionAnswer = $generateQuestion();
         $question = $questionAnswer['question'];
         $correctAnswer = $questionAnswer['answer'];
         line('Question: %s', (string) $question);
         $userInput = prompt('Your answer');
         $userAnswer = inputToBool($userInput);
-
-        #$correctAnswer = $checkAnswer($question);
+        
         if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userInput, boolToAnswer($correctAnswer));
             line("Let's try again, %s!", $name);
