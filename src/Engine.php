@@ -13,19 +13,8 @@ function greet(): string
     return $name;
 }
 
-/*
-function boolToanswer($input)
-{
-    $type = gettype($input);
-    if ($type === 'bool') {
-        return $input === true ? 'yes' : 'no';
-    }
-    return $input;
-}
-*/
-
 function inputToBool($input)
-{   
+{
     #не switch, для строгого сравнения
     if ($input === 'yes') {
         return true;
@@ -36,10 +25,11 @@ function inputToBool($input)
     }
 }
 
-function boolToAnswer ($bool) {
+function boolToAnswer($bool)
+{
     if ($bool === true) {
         return 'yes';
-    }else if ($bool === false) {
+    } else if ($bool === false) {
         return 'no';
     } else {
         return $bool;
@@ -73,5 +63,4 @@ function playGame(string $generateQuestion, string $task)
     }
 
     line('Congratulations, %s!', $name);
-    
 }

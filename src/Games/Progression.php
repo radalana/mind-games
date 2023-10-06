@@ -4,8 +4,6 @@ namespace Code\Games\Progression;
 
 use function Code\Engine\playGame;
 
-
-
 function generateProgression(int $lengthOfProgression)
 {
     $firstNumber = rand(-10, 10);

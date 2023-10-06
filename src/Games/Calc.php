@@ -18,7 +18,8 @@ function calculateExpression(int $firstNumber, int $secondNumber, string $operat
     }
 }
 
-function generateExpression() {
+function generateExpression()
+{
     $firstNumber = rand(-100, 100);
     $secondNumber = rand(-100, 100);
     $operations = ['+', '-', '*'];
@@ -28,7 +29,6 @@ function generateExpression() {
     $result = ['question' => "{$firstNumber} {$operations[$operationIndex]} {$secondNumber}", 'answer' => $answer];
 
     return $result;
-
 }
 
 

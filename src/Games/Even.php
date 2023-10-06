@@ -15,7 +15,6 @@ function generateNumber()
     $answer = isEven($question);
 
     return ['question' => $question, 'answer' => $answer];
-
 }
 
 function playEven()

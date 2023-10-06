@@ -4,7 +4,8 @@ namespace Code\Games\Gcd;
 
 use function Code\Engine\playGame;
 
-function calculateGreatestCommonDeviser ($firstNumber, $secondNumber) {
+function calculateGreatestCommonDeviser($firstNumber, $secondNumber)
+{
     if ($firstNumber === 0 || $secondNumber === 0) {
         return $firstNumber + $secondNumber;
     }
@@ -15,7 +16,6 @@ function calculateGreatestCommonDeviser ($firstNumber, $secondNumber) {
             $secondNumber = $secondNumber - $firstNumber;
         }
     }
-
     return $firstNumber;
 }
 
