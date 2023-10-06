@@ -19,7 +19,7 @@ function calculateGreatestCommonDeviser($firstNumber, $secondNumber)
     return $firstNumber;
 }
 
-function generateQuestion() 
+function generateQuestion()
 {
     $firstNumber = rand(1, 50);
     $secondNumber = rand(1, 50);
