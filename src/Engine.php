@@ -35,7 +35,7 @@ function boolToAnswer(bool $bool)
         return $bool;
     }
 }
-function playGame(string $generateQuestion, string $task)
+function playGame(callable $generateQuestion, string $task)
 {
     $name = greet();
     line($task);
