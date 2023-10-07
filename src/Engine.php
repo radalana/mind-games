@@ -15,7 +15,6 @@ function greet(): string
 
 function inputToBool(string $input)
 {
-    #не switch, для строгого сравнения
     if ($input === 'yes') {
         return true;
     } else if ($input === 'no') {
@@ -45,7 +44,7 @@ function playGame(string $generateQuestion, string $task)
         line('Question: %s', (string) $question);
         $userInput = prompt('Your answer');
         $userAnswer = inputToBool($userInput);
-        $outputAnswer = type($correctAnswer) == 'bool' ? boolToAnswer($correctAnswer) : $correctAnswer;
+        $outputAnswer = gettype($correctAnswer) == 'bool' ? boolToAnswer($correctAnswer) : $correctAnswer;
         if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userInput, $outputAnswer);
             line("Let's try again, %s!", $name);
