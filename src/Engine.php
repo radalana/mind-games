@@ -29,7 +29,7 @@ function boolToAnswer(bool $bool): string
     $result = $bool === true ? 'yes' : 'no';
     return $result;
 }
-function playGame(string $generateQuestion, string $task)
+function playGame(callable $generateQuestion, string $task)
 {
     $name = greet();
     line($task);
@@ -44,7 +44,7 @@ function playGame(string $generateQuestion, string $task)
         line('Question: %s', (string) $question);
         $userInput = prompt('Your answer');
         $userAnswer = inputToBool($userInput);
-        $outputAnswer = gettype($correctAnswer) == 'bool' ? boolToAnswer($correctAnswer) : $correctAnswer;
+        $outputAnswer = gettype($correctAnswer) == 'boolean' ? boolToAnswer($correctAnswer) : $correctAnswer;
         if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userInput, $outputAnswer);
             line("Let's try again, %s!", $name);
