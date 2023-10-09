@@ -12,7 +12,7 @@ if (file_exists($autoloadPath2)) {
     require_once $autoloadPath1;
 }
 
-use function Code\Games\Prime\findPrime;
+use function Code\Games\Prime\play;
 
 
-findPrime();
+play();

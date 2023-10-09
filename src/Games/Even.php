@@ -19,7 +19,7 @@ function generateNumber()
     return ['question' => $question, 'answer' => $answer];
 }
 
-function playEven()
+function play()
 {
     playGame('Code\Games\Even\generateNumber', DESCRIPTION);
 }

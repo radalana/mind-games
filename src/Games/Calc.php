@@ -35,7 +35,7 @@ function generateExpression()
 }
 
 
-function playCalculation()
+function play()
 {
     playGame('Code\Games\Calc\generateExpression', DESCRIPTION);
 }

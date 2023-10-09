@@ -30,7 +30,7 @@ function generateQuestion()
     return ['question' => "{$firstNumber} {$secondNumber}", 'answer' => $answer];
 }
 
-function findGreatestCommonDeviser()
+function play()
 {
     playGame('Code\Games\Gcd\generateQuestion', DESCRIPTION);
 }

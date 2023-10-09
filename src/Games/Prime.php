@@ -38,7 +38,7 @@ function generateNumber()
     return ['question' => $question, 'answer' => $answer];
 }
 
-function findPrime()
+function play()
 {
     playGame('Code\Games\Prime\generateNumber', DESCRIPTION);
 }

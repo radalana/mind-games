@@ -43,7 +43,7 @@ function generateQuestion()
     return ['question' => $qustion, 'answer' => $answer];
 }
 
-function playArithmeticProgression()
+function play()
 {
     playGame('Code\Games\Progression\generateQuestion', DESCRIPTION);
 }
