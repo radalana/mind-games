@@ -30,10 +30,15 @@ function isPrime(int $number)
     return true;
 }
 
+function boolToYesNo(bool $bool)
+{
+    return $bool ? 'yes' : 'no';
+}
+
 function generateNumber()
 {
     $question =  rand(1, 3571);
-    $answer = isPrime($question);
+    $answer = boolToYesNo(isPrime($question));
 
     return ['question' => $question, 'answer' => $answer];
 }
