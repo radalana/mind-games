@@ -45,5 +45,5 @@ function generateNumber()
 
 function play()
 {
-    playGame(__NAMESPACE__.'generateNumber', DESCRIPTION);
+    playGame(__NAMESPACE__.'\generateNumber', DESCRIPTION);
 }
