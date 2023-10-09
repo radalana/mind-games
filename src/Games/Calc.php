@@ -4,7 +4,7 @@ namespace Code\Games\Calc;
 
 use function Code\Engine\playGame;
 
-CONST DESCRIPTION = 'What is the result of the expression?';
+const DESCRIPTION = 'What is the result of the expression?';
 
 function calculateExpression(int $firstNumber, int $secondNumber, string $operation)
 {
@@ -37,5 +37,5 @@ function generateExpression()
 
 function play()
 {
-    playGame(__NAMESPACE__.'\generateExpression', DESCRIPTION);
+    playGame(__NAMESPACE__ . '\generateExpression', DESCRIPTION);
 }

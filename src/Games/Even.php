@@ -4,7 +4,7 @@ namespace Code\Games\Even;
 
 use function Code\Engine\playGame;
 
-CONST DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function isEven(int $number)
 {
@@ -26,5 +26,5 @@ function generateNumber()
 
 function play()
 {
-    playGame(__NAMESPACE__.'\generateNumber', DESCRIPTION);
+    playGame(__NAMESPACE__ . '\generateNumber', DESCRIPTION);
 }

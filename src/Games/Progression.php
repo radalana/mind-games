@@ -4,7 +4,7 @@ namespace Code\Games\Progression;
 
 use function Code\Engine\playGame;
 
-CONST DESCRIPTION = 'What number is missing in the progression?';
+const DESCRIPTION = 'What number is missing in the progression?';
 
 function generateProgression(int $lengthOfProgression)
 {
@@ -45,5 +45,5 @@ function generateQuestion()
 
 function play()
 {
-    playGame(__NAMESPACE__.'\generateQuestion', DESCRIPTION);
+    playGame(__NAMESPACE__ . '\generateQuestion', DESCRIPTION);
 }

@@ -4,7 +4,7 @@ namespace Code\Games\Prime;
 
 use function Code\Engine\playGame;
 
-CONST DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $number)
 {
@@ -45,5 +45,5 @@ function generateNumber()
 
 function play()
 {
-    playGame(__NAMESPACE__.'\generateNumber', DESCRIPTION);
+    playGame(__NAMESPACE__ . '\generateNumber', DESCRIPTION);
 }

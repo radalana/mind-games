@@ -4,7 +4,7 @@ namespace Code\Games\Gcd;
 
 use function Code\Engine\playGame;
 
-CONST DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function calculateGreatestCommonDeviser(int $firstNumber, int $secondNumber)
 {
@@ -32,5 +32,5 @@ function generateQuestion()
 
 function play()
 {
-    playGame(__NAMESPACE__.'\generateQuestion', DESCRIPTION);
+    playGame(__NAMESPACE__ . '\generateQuestion', DESCRIPTION);
 }
