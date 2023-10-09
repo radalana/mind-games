@@ -4,6 +4,8 @@ namespace Code\Games\Prime;
 
 use function Code\Engine\playGame;
 
+CONST DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 function isPrime(int $number)
 {
     if (($number === 1) || ($number === 2)) {
@@ -38,6 +40,5 @@ function generateNumber()
 
 function findPrime()
 {
-    $task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    playGame('Code\Games\Prime\generateNumber', $task);
+    playGame('Code\Games\Prime\generateNumber', DESCRIPTION);
 }

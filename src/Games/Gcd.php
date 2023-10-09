@@ -4,6 +4,8 @@ namespace Code\Games\Gcd;
 
 use function Code\Engine\playGame;
 
+CONST DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+
 function calculateGreatestCommonDeviser(int $firstNumber, int $secondNumber)
 {
     if ($firstNumber === 0 || $secondNumber === 0) {
@@ -30,6 +32,5 @@ function generateQuestion()
 
 function findGreatestCommonDeviser()
 {
-     $task = 'Find the greatest common divisor of given numbers.';
-    playGame('Code\Games\Gcd\generateQuestion', $task);
+    playGame('Code\Games\Gcd\generateQuestion', DESCRIPTION);
 }

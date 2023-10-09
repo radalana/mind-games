@@ -4,6 +4,8 @@ namespace Code\Games\Calc;
 
 use function Code\Engine\playGame;
 
+CONST DESCRIPTION = 'What is the result of the expression?';
+
 function calculateExpression(int $firstNumber, int $secondNumber, string $operation)
 {
     switch ($operation) {
@@ -35,6 +37,5 @@ function generateExpression()
 
 function playCalculation()
 {
-    $task = 'What is the result of the expression?';
-    playGame('Code\Games\Calc\generateExpression', $task);
+    playGame('Code\Games\Calc\generateExpression', DESCRIPTION);
 }

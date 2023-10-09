@@ -4,6 +4,8 @@ namespace Code\Games\Even;
 
 use function Code\Engine\playGame;
 
+CONST DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 function isEven(int $number)
 {
     return $number % 2 === 0 ? true : false;
@@ -19,6 +21,5 @@ function generateNumber()
 
 function playEven()
 {
-    $task = 'Answer "yes" if the number is even, otherwise answer "no".';
-    playGame('Code\Games\Even\generateNumber', $task);
+    playGame('Code\Games\Even\generateNumber', DESCRIPTION);
 }

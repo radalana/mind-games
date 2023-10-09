@@ -4,6 +4,8 @@ namespace Code\Games\Progression;
 
 use function Code\Engine\playGame;
 
+CONST DESCRIPTION = 'What number is missing in the progression?';
+
 function generateProgression(int $lengthOfProgression)
 {
     $firstNumber = rand(-10, 10);
@@ -43,6 +45,5 @@ function generateQuestion()
 
 function playArithmeticProgression()
 {
-    $task = 'What number is missing in the progression?';
-    playGame('Code\Games\Progression\generateQuestion', $task);
+    playGame('Code\Games\Progression\generateQuestion', DESCRIPTION);
 }
