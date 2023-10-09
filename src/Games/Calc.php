@@ -17,7 +17,6 @@ function calculateExpression(int $firstNumber, int $secondNumber, string $operat
             return $firstNumber * $secondNumber;
         default:
             throw new \Exception('Invalid operation');
-
     }
 }
 
