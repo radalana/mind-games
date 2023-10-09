@@ -21,5 +21,6 @@ function generateNumber()
 
 function play()
 {
-    playGame('Code\Games\Even\generateNumber', DESCRIPTION);
+    $fullFunctionName = __NAMESPACE__.'\generateNumber';
+    playGame($fullFunctionName, DESCRIPTION);
 }

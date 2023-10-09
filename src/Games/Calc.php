@@ -37,5 +37,6 @@ function generateExpression()
 
 function play()
 {
-    playGame('Code\Games\Calc\generateExpression', DESCRIPTION);
+    $fullFunctionName = __NAMESPACE__.'\generateExpression';
+    playGame($fullFunctionName, DESCRIPTION);
 }
