@@ -16,7 +16,7 @@ function calculateExpression(int $firstNumber, int $secondNumber, string $operat
         case '*':
             return $firstNumber * $secondNumber;
         default:
-        throw new \Exception('Invalid operation');
+            throw new \Exception('Invalid operation');
 
     }
 }
@@ -37,6 +37,5 @@ function generateExpression()
 
 function play()
 {
-    $fullFunctionName = __NAMESPACE__.'\generateExpression';
-    playGame($fullFunctionName, DESCRIPTION);
+    playGame(__NAMESPACE__.'\generateExpression', DESCRIPTION);
 }

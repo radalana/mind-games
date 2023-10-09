@@ -32,6 +32,5 @@ function generateQuestion()
 
 function play()
 {
-    $fullFunctionName = __NAMESPACE__.'\generateQuestion';
-    playGame($fullFunctionName, DESCRIPTION);
+    playGame(__NAMESPACE__.'\generateQuestion', DESCRIPTION);
 }

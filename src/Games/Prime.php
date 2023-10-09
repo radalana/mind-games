@@ -40,6 +40,5 @@ function generateNumber()
 
 function play()
 {
-    $fullFunctionName = __NAMESPACE__.'\generateNumber';
-    playGame($fullFunctionName, DESCRIPTION);
+    playGame(__NAMESPACE__.'generateNumber', DESCRIPTION);
 }
