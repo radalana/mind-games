@@ -9,8 +9,8 @@ const DESCRIPTION = 'What number is missing in the progression?';
 function generateProgression(int $lengthOfProgression)
 {
     $firstNumber = rand(-10, 10);
-
     $diff = rand(-10, 10);
+    $progression = [];
 
     for ($i = 0; $i < $lengthOfProgression; $i++) {
         $progression[$i] = $firstNumber + ($i * $diff);
