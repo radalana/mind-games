@@ -6,7 +6,7 @@ use function Code\Engine\playGame;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-function calculateGreatestCommonDeviser(int $firstNumber, int $secondNumber)
+function calculateGreatestCommonDiviser(int $firstNumber, int $secondNumber)
 {
     if ($firstNumber === 0 || $secondNumber === 0) {
         return $firstNumber + $secondNumber;
@@ -26,7 +26,7 @@ function generateQuestion()
     $firstNumber = rand(1, 50);
     $secondNumber = rand(1, 50);
 
-    $answer = calculateGreatestCommonDeviser($firstNumber, $secondNumber);
+    $answer = calculateGreatestCommonDiviser($firstNumber, $secondNumber);
     return ['question' => "{$firstNumber} {$secondNumber}", 'answer' => $answer];
 }
 
