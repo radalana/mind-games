@@ -28,11 +28,12 @@ function playGame(callable $generateQuestion, string $task)
     for ($currentRound; $currentRound < $numberOfRounds; $currentRound++) {
         $questionAnswer = $generateQuestion();
         $question = $questionAnswer['question'];
-        $correctAnswer = boolToYesNo($questionAnswer['answer']);
+        $correctAnswer = $questionAnswer['answer'];
+        $outputAnswer = gettype($correctAnswer) === 'boolean' ? boolToYesNo($correctAnswer) : $correctAnswer;
         line('Question: %s', (string) $question);
         $userAnswer = prompt('Your answer');
-        if ($userAnswer != $correctAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
+        if ($userAnswer != $outputAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $outputAnswer);
             line("Let's try again, %s!", $name);
             return;
         }
