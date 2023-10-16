@@ -11,15 +11,10 @@ function isEven(int $number)
     return $number % 2 === 0;
 }
 
-function boolToYesNo(bool $bool)
-{
-    return $bool ? 'yes' : 'no';
-}
-
 function generateNumber()
 {
     $question = rand();
-    $answer = boolToYesNo(isEven($question));
+    $answer = isEven($question);
 
     return ['question' => $question, 'answer' => $answer];
 }
