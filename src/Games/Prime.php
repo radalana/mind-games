@@ -20,7 +20,7 @@ function isPrime(int $number)
 
     $potentialDivisers = 3;
     /*
-      начало с 3, чтобы при прибавление шага +2, цикл прохдил только по нечетным числам  
+      начало с 3, чтобы при прибавление шага +2, цикл прохдил только по нечетным числам
     */
 
     for ($potentialDivisers; $potentialDivisers <= $border; $potentialDivisers += 2) {
