@@ -8,18 +8,20 @@ const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no
 
 function isPrime(int $number)
 {
-    if (($number === 1) || ($number === 2)) {
+    if ($number === 1) {
         return false;
     }
 
-
-    if (($number % 2 === 0) || ($number % 3 === 0)) {
+    if (($number % 2 === 0) && ($number != 2)) {
         return false;
     }
 
     $border = round(sqrt($number));
 
-    $potentialDivisers = 5;
+    $potentialDivisers = 3;
+    /*
+      начало с 3, чтобы при прибавление шага +2, цикл прохдил только по нечетным числам  
+    */
 
     for ($potentialDivisers; $potentialDivisers <= $border; $potentialDivisers += 2) {
         if ($number % $potentialDivisers == 0) {
