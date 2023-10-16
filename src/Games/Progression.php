@@ -21,15 +21,8 @@ function generateProgression(int $lengthOfProgression)
 
 function progressionToString(array $progression, int $lengthOfProgression, int $possitionOfHiddenNumber): string
 {
-    $array = [];
-    for ($i = 0; $i <  $lengthOfProgression; $i++) {
-        if ($i === $possitionOfHiddenNumber) {
-            $array[] = '..';
-        } else {
-            $array[] = "{$progression[$i]}";
-        }
-    }
-    return implode(" ", $array);
+    $progression[$possitionOfHiddenNumber] = '..';
+    return implode(" ", $progression);
 }
 function generateQuestion()
 {
