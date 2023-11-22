@@ -13,10 +13,6 @@ function greet(): string
     return $name;
 }
 
-function boolToYesNo(bool $bool)
-{
-    return $bool ? 'yes' : 'no';
-}
 function playGame(callable $generateQuestion, string $task)
 {
     $name = greet();
@@ -29,11 +25,10 @@ function playGame(callable $generateQuestion, string $task)
         $questionAnswer = $generateQuestion();
         $question = $questionAnswer['question'];
         $correctAnswer = $questionAnswer['answer'];
-        $outputAnswer = gettype($correctAnswer) === 'boolean' ? boolToYesNo($correctAnswer) : $correctAnswer;
         line('Question: %s', (string) $question);
         $userAnswer = prompt('Your answer');
-        if ($userAnswer != $outputAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $outputAnswer);
+        if ($userAnswer != $correctAnswer) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
             return;
         }

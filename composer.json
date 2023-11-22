@@ -5,6 +5,7 @@
 	"files": [
 	    "src/Cli.php",
 	    "src/Engine.php",
+	    "src/BooleanConverter.php",
 	    "src/Games/Calc.php",
             "src/Games/Even.php",
             "src/Games/Gcd.php",

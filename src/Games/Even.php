@@ -1,6 +1,7 @@
 <?php
 
 namespace Code\Games\Even;
+use function Code\Converter\convertBool;
 
 use function Code\Engine\playGame;
 
@@ -16,7 +17,7 @@ function generateNumber()
     $question = rand();
     $answer = isEven($question);
 
-    return ['question' => $question, 'answer' => $answer];
+    return ['question' => $question, 'answer' => convertBool($answer)];
 }
 
 function play()

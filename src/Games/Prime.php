@@ -3,6 +3,7 @@
 namespace Code\Games\Prime;
 
 use function Code\Engine\playGame;
+use function Code\Converter\convertBool;
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -37,7 +38,7 @@ function generateNumber()
     $question =  rand(1, 3571);
     $answer = isPrime($question);
 
-    return ['question' => $question, 'answer' => $answer];
+    return ['question' => $question, 'answer' => convertBool($answer)];
 }
 
 function play()
