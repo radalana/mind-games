@@ -26,7 +26,7 @@ function generateQuestion()
     $firstNumber = rand(1, 50);
     $secondNumber = rand(1, 50);
 
-    $answer = calculateGreatestCommonDiviser($firstNumber, $secondNumber);
+    $answer = calculateGreatestCommonDivisor($firstNumber, $secondNumber);
     return ['question' => "{$firstNumber} {$secondNumber}", 'answer' => $answer];
 }
 
