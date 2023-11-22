@@ -19,11 +19,6 @@ function generateProgression(int $lengthOfProgression)
     return $progression;
 }
 
-function progressionToString(array $progression, int $lengthOfProgression, int $possitionOfHiddenNumber): string
-{
-    $progression[$possitionOfHiddenNumber] = '..';
-    return implode(" ", $progression);
-}
 function generateQuestion()
 {
     $lengthOfProgression = rand(5, 10);
@@ -31,8 +26,8 @@ function generateQuestion()
     $progression = generateProgression($lengthOfProgression);
 
     $answer = $progression[$possitionOfHiddenNumber];
-    $qustion =  progressionToString($progression, $lengthOfProgression, $possitionOfHiddenNumber);
-    return ['question' => $qustion, 'answer' => $answer];
+    $progression[$possitionOfHiddenNumber] = '..';
+    return ['question' => implode(" ", $progression), 'answer' => $answer];
 }
 
 function play()
