@@ -19,13 +19,13 @@ function isPrime(int $number)
 
     $border = round(sqrt($number));
 
-    $potentialDivisers = 3;
+    $potentialDivisor = 3;
     /*
       начало с 3, чтобы при прибавление шага +2, цикл прохдил только по нечетным числам
     */
 
-    for ($potentialDivisers; $potentialDivisers <= $border; $potentialDivisers += 2) {
-        if ($number % $potentialDivisers == 0) {
+    for ($potentialDivisor; $potentialDivisor <= $border; $potentialDivisor += 2) {
+        if ($number % $potentialDivisor == 0) {
             return false;
         }
     }
