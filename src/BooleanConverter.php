@@ -6,4 +6,3 @@ function convertBool(bool $bool)
 {
     return $bool ? 'yes' : 'no';
 }
-
