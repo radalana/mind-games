@@ -2,7 +2,7 @@
 
 namespace Code\Games\Even;
 
-use function Code\Converter\convertBool;
+use function Code\BooleanConverter\convertBool;
 use function Code\Engine\playGame;
 
 const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';

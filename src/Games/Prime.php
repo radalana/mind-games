@@ -3,7 +3,7 @@
 namespace Code\Games\Prime;
 
 use function Code\Engine\playGame;
-use function Code\Converter\convertBool;
+use function Code\BooleanConverter\convertBool;
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Code\Converter;
+namespace Code\BooleanConverter;
 
 function convertBool(bool $bool)
 {
